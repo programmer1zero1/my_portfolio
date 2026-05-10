@@ -1,0 +1,69 @@
+PROGRAMMER1ZERO1 SOURCE-AVAILABLE LICENSE
+Version 1.0 — 2026
+
+Copyright (c) 2026 Muhammad Ramzan <programmer1zero1@gmail.com>.
+All rights reserved.
+
+
+WHAT THIS IS
+
+This repository is SOURCE-AVAILABLE: others can inspect the source, while use stays
+restricted. That is the same broad category many vendors use when they publish code
+without adopting permissive MIT/Apache/GPL terms — for example MongoDB SSPL-era choice,
+Elastic’s licensed modules, Redis’s RSAL historical line, MariaDB-style BSL forks,
+Business Source-style delayed-OSS forks, PolyForm templated restrictive licenses —
+each differ in detail — this template is bespoke to Licensor.
+
+This agreement is NOT an Open Source Initiative (OSI)-approved license.
+
+
+TERMS
+
+1. Definitions — “Licensor” is Muhammad Ramzan (programmer1zero1@gmail.com). “Software”
+means the files offered in this repository. “You” means any person or entity that
+accesses or copies Software.
+
+2. Grants You may ONLY, for personal NON-COMMERCIAL purposes:
+
+   (a) browse or read Software where hosted;
+
+   (b) keep one private replica (clone, download archive) on equipment You control;
+
+   (c) build and run that replica locally for learning, security research, or
+       interoperability verification — without production traffic, paying customers,
+       fee-based clients, ad-funded commercial scale, or internal corporate production
+       deployment;
+
+   (d) quote insubstantial portions for commentary, review, or lawful academic citation,
+       with attribution and this license text preserved.
+
+3. Prohibited without prior written permission from Licensor — commercial purpose;
+production use (public or private); sale, lease, rental, sublicense, redistribution to
+third parties; offering Software or a close functional substitute as SaaS, API product,
+marketplace template, bundled kit, or paid consulting artefact derived from undue
+copying; removing or falsifying notices; systematic mirroring to defeat restrictions;
+building a materially competing product whose protectable structure comes from copying
+Software rather than independent design.
+
+4. Commercial / production — Email Licensor to negotiate enterprise deployment, resale,
+licensing, revenue share, attribution carve-outs, or white-label terms.
+
+5. Intellectual property — All rights not expressly granted are reserved, including but
+not limited to copyright, compilation goodwill, embodied trade-secret treatment where it
+exists, unfair-competition doctrines where recognised, patents and patent applications
+reading on embodied matter if any arise. No patent license granted except compulsory
+minimal extent where law requires.
+
+6. Warranty — THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND. LICENSOR
+DISCLAIMS IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE,
+QUIET ENJOYMENT, AND NON-INFRINGEMENT, TO THE FULLEST EXTENT LAW ALLOWS.
+
+7. Limitation of liability — TO THE FULLEST EXTENT LAW ALLOWS, LICENSOR IS NOT LIABLE FOR
+ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, NOR FOR
+LOST PROFITS, LOST REVENUE, LOST DATA, OR BUSINESS INTERRUPTION.
+
+8. Termination and severability — Abuse of the grant in section 2 terminates that grant
+automatically; remaining prohibitions still apply. Licensor may pursue equitable and
+monetary remedies statutes permit. If one clause is judged unenforceable, the rest stays
+in force to the maximum extent possible.
+

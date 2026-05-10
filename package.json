@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio and multi-surface demo — Expo (web, iOS, Android), expo-router, responsive layout with @programmer1zero1/expo-responsive-window, optional Electron desktop packaging.",
   "author": "Muhammad Ramzan <programmer1zero1@gmail.com>",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/programmer1zero1/my_portfolio.git"
