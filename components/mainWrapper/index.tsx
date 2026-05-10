@@ -1,4 +1,4 @@
-import {useScreenLayout} from 'expo-responsive-window';
+import {useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {
   type ReactNode,
   memo,

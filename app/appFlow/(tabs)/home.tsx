@@ -15,7 +15,7 @@ import {
   platformSelect,
   ScreenContentInsets,
   useScreenLayout,
-} from 'expo-responsive-window';
+} from '@programmer1zero1/expo-responsive-window';
 import {router} from 'expo-router';
 import {LinearGradient} from 'expo-linear-gradient';
 import type {ReactNode} from 'react';

@@ -1528,8 +1528,10 @@
     lodash "^4.17.15"
     tmp-promise "^3.0.2"
 
-"@programmer1zero1/expo-responsive-window@file:packages/expo-responsive-window":
-  version "1.5.0"
+"@programmer1zero1/expo-responsive-window@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@programmer1zero1/expo-responsive-window/-/expo-responsive-window-1.0.0.tgz#15e0a8710da3997922f063761b2dfea82b3e859c"
+  integrity sha512-yplSZu8RJ9EdvwHAfVqu8qEMCjYh7FiE78mVF3wGTJM9Q0YerWuieVTjqE4bx5YxTTGHJDVHnxEEi9SecqH29Q==
 
 "@radix-ui/primitive@1.1.3":
   version "1.1.3"

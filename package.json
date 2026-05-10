@@ -3,15 +3,11 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "build:responsive-window": "npm run build --prefix packages/expo-responsive-window",
     "build:web": "npx expo export --platform web",
     "electron": "electron electron/main.cjs",
     "electron:dev": "node electron/run-dev.cjs",
@@ -71,7 +67,7 @@
     "expo-font": "~14.0.11",
     "expo-linear-gradient": "~15.0.8",
     "expo-linking": "~8.0.12",
-    "@programmer1zero1/expo-responsive-window": "file:packages/expo-responsive-window",
+    "@programmer1zero1/expo-responsive-window": "^1.0.0",
     "expo-router": "~6.0.23",
     "expo-status-bar": "~3.0.9",
     "expo-web-browser": "~15.0.11",
