@@ -1,6 +1,28 @@
 {
   "name": "myportfolio",
   "version": "1.0.0",
+  "description": "Personal portfolio and multi-surface demo — Expo (web, iOS, Android), expo-router, responsive layout with @programmer1zero1/expo-responsive-window, optional Electron desktop packaging.",
+  "author": "Muhammad Ramzan <programmer1zero1@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programmer1zero1/my_portfolio.git"
+  },
+  "homepage": "https://github.com/programmer1zero1/my_portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/programmer1zero1/my_portfolio/issues"
+  },
+  "keywords": [
+    "expo",
+    "expo-router",
+    "react-native",
+    "portfolio",
+    "typescript",
+    "electron",
+    "cross-platform",
+    "responsive",
+    "my-portfolio"
+  ],
   "main": "expo-router/entry",
   "private": true,
   "scripts": {
