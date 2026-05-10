@@ -2,6 +2,14 @@
 
 A small portfolio app built as a **proof-of-concept**: one React Native + Expo codebase that targets phones, browsers, and (in progress) the desktop shell with Electron. It is intentionally minimal—it shows how layout and navigation can stay shared while delivery changes per platform.
 
+## Demo
+
+Add **`docs/demo.mp4`** (screen recording of web/tablet or simulator rotation) and push to **`main`** so the embed below resolves. Fallback if the file is missing or the branch name differs:
+
+<video src="https://raw.githubusercontent.com/programmer1zero1/my_portfolio/main/docs/demo.mp4" controls muted playsinline width="100%" style="max-width:720px"></video>
+
+[Open demo file on GitHub](https://github.com/programmer1zero1/my_portfolio/blob/main/docs/demo.mp4) · Keep clips short or use Git LFS / YouTube for heavy media.
+
 ## Responsive layout
 
 This project uses [**@programmer1zero1/expo-responsive-window**](https://www.npmjs.com/package/@programmer1zero1/expo-responsive-window) for breakpoints, scaled design pixels, safe gutters, and window-aware helpers so the UI adapts across phone, tablet, and wider web/desktop-style widths. Imports use the scoped package name: `@programmer1zero1/expo-responsive-window`.
