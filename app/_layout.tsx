@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import {FontProvider, ThemeProvider} from '@/services';
-import {ScreenLayoutSettingsProvider} from 'expo-responsive-window';
+import {ScreenLayoutSettingsProvider} from '@programmer1zero1/expo-responsive-window';
 import {Stack} from 'expo-router';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {KeyboardProvider} from 'react-native-keyboard-controller';

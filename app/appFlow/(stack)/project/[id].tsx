@@ -2,7 +2,7 @@ import {Header, MainWrapper, ParentWrapper} from '@/components';
 import {FontFamily} from '@/constants/Fonts';
 import {projects} from '@/constants/cvData';
 import {useTheme} from '@/services';
-import {ScreenContentInsets, useScreenLayout} from 'expo-responsive-window';
+import {ScreenContentInsets, useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import * as Linking from 'expo-linking';
 import {useLocalSearchParams} from 'expo-router';
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
@@ -11,7 +11,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 export default function ProjectDetailScreen() {
   const {id} = useLocalSearchParams<{id: string}>();
   const {colors, theme} = useTheme();
-  const {scaledFont, scaledHeight, scaledWidth} = useScreenLayout();
+  const {scaledHeight, scaledWidth} = useScreenLayout();
   const insets = useSafeAreaInsets();
   const project = projects.find(p => p.id === id);
 
@@ -60,19 +60,19 @@ export default function ProjectDetailScreen() {
       <Text
         style={{
           fontFamily: FontFamily.displayBold,
-          fontSize: scaledFont(26),
+          fontSize: scaledWidth(26),
           color: theme === 'dark' ? colors.white : colors.black,
         }}>
         {project.title}
       </Text>
-      <Text style={{fontFamily: FontFamily.interMedium, fontSize: scaledFont(13), color: colors.grey}}>
+      <Text style={{fontFamily: FontFamily.interMedium, fontSize: scaledWidth(13), color: colors.grey}}>
         {project.role} · {project.stack.join(' · ')}
       </Text>
       <Text
         style={{
           fontFamily: FontFamily.interRegular,
-          fontSize: scaledFont(15),
-          lineHeight: scaledFont(23),
+          fontSize: scaledWidth(15),
+          lineHeight: scaledWidth(23),
           color: theme === 'dark' ? colors.grey5 : colors.darkGrey,
         }}>
         {project.body}
@@ -81,14 +81,14 @@ export default function ProjectDetailScreen() {
       <View style={{flexDirection: 'row', flexWrap: 'wrap', gap: scaledWidth(12)}}>
         {project.appStoreUrl ? (
           <Pressable onPress={() => Linking.openURL(project.appStoreUrl!)}>
-            <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledFont(14), color: colors.blue}}>
+            <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledWidth(14), color: colors.blue}}>
               App Store
             </Text>
           </Pressable>
         ) : null}
         {project.playStoreUrl ? (
           <Pressable onPress={() => Linking.openURL(project.playStoreUrl!)}>
-            <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledFont(14), color: colors.blue}}>
+            <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledWidth(14), color: colors.blue}}>
               Play Store
             </Text>
           </Pressable>

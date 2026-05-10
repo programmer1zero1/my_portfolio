@@ -2,7 +2,7 @@ import {MainWrapper, ParentWrapper} from '@/components';
 import {FontFamily} from '@/constants/Fonts';
 import {additionalUiProjects, skills as skillGroups, technicalSkills} from '@/constants/cvData';
 import {useTheme} from '@/services';
-import {ScreenContentInsets, useScreenLayout} from 'expo-responsive-window';
+import {ScreenContentInsets, useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {useMemo} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -10,7 +10,6 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 export default function SkillsTab() {
   const {colors, theme} = useTheme();
   const {
-    scaledFont,
     scaledHeight,
     verticalSpacing,
     scaledWidth,
@@ -30,28 +29,28 @@ export default function SkillsTab() {
       StyleSheet.create({
         h1: {
           fontFamily: FontFamily.displayBold,
-          fontSize: scaledFont(26),
+          fontSize: scaledWidth(26),
           color: textPrimary,
         },
         group: {
           fontFamily: FontFamily.interBold,
-          fontSize: scaledFont(14),
+          fontSize: scaledWidth(14),
           color: colors.brand,
           textTransform: 'uppercase',
           letterSpacing: 0.8,
         },
         chip: {
           fontFamily: FontFamily.interMedium,
-          fontSize: scaledFont(12),
+          fontSize: scaledWidth(12),
         },
         li: {
           fontFamily: FontFamily.interRegular,
-          fontSize: scaledFont(13),
+          fontSize: scaledWidth(13),
           color: textSecondary,
-          lineHeight: scaledFont(19),
+          lineHeight: scaledWidth(19),
         },
       }),
-    [colors.brand, scaledFont, textPrimary, textSecondary],
+    [colors.brand, scaledWidth, textPrimary, textSecondary],
   );
 
   return (

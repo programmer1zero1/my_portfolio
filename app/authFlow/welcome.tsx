@@ -2,7 +2,7 @@ import {Button, MainWrapper, ParentWrapper} from '@/components';
 import {FontFamily} from '@/constants/Fonts';
 import {profile} from '@/constants/cvData';
 import {useTheme} from '@/services';
-import {ScreenContentInsets, useScreenLayout} from 'expo-responsive-window';
+import {ScreenContentInsets, useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {LinearGradient} from 'expo-linear-gradient';
 import {router} from 'expo-router';
 import {StyleSheet, Text, View} from 'react-native';
@@ -10,7 +10,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export default function WelcomeScreen() {
   const {colors} = useTheme();
-  const {scaledFont, scaledHeight, scaledWidth, windowWidthPct} = useScreenLayout();
+  const {scaledHeight, scaledWidth, windowWidthPct} = useScreenLayout();
   const insets = useSafeAreaInsets();
 
   return (
@@ -41,7 +41,7 @@ export default function WelcomeScreen() {
                   style={{
                     color: colors.brand5,
                     fontFamily: FontFamily.interSemiBold,
-                    fontSize: scaledFont(12),
+                    fontSize: scaledWidth(12),
                     letterSpacing: 1.2,
                   }}>
                   PORTFOLIO · EXPO 54
@@ -51,8 +51,8 @@ export default function WelcomeScreen() {
                 style={{
                   color: colors.white,
                   fontFamily: FontFamily.displayBold,
-                  fontSize: scaledFont(40),
-                  lineHeight: scaledFont(44),
+                  fontSize: scaledWidth(40),
+                  lineHeight: scaledWidth(44),
                 }}>
                 {profile.name.split(' ')[0]}
                 {'\n'}
@@ -62,7 +62,7 @@ export default function WelcomeScreen() {
                 style={{
                   color: colors.brand5,
                   fontFamily: FontFamily.interMedium,
-                  fontSize: scaledFont(17),
+                  fontSize: scaledWidth(17),
                 }}>
                 {profile.title}
               </Text>
@@ -70,8 +70,8 @@ export default function WelcomeScreen() {
                 style={{
                   color: colors.white,
                   fontFamily: FontFamily.interRegular,
-                  fontSize: scaledFont(14),
-                  lineHeight: scaledFont(21),
+                  fontSize: scaledWidth(14),
+                  lineHeight: scaledWidth(21),
                   opacity: 0.92,
                   maxWidth: windowWidthPct(92),
                 }}>
@@ -92,7 +92,7 @@ export default function WelcomeScreen() {
                 style={{
                   color: colors.brand5,
                   fontFamily: FontFamily.interRegular,
-                  fontSize: scaledFont(13),
+                  fontSize: scaledWidth(13),
                 }}>
                 TX Dynamics · React Native · Node integrations
               </Text>

@@ -26,7 +26,6 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 export default function HomeTab() {
   const {colors, theme, setThemeManually} = useTheme();
   const {
-    scaledFont,
     scaledHeight,
     verticalSpacing,
     scaledWidth,
@@ -43,37 +42,37 @@ export default function HomeTab() {
       StyleSheet.create({
         h1: {
           fontFamily: FontFamily.displayBold,
-          fontSize: scaledFont(26),
+          fontSize: scaledWidth(26),
           color: colors.black,
         },
         sectionTitle: {
           fontFamily: FontFamily.interBold,
-          fontSize: scaledFont(18),
+          fontSize: scaledWidth(18),
           color: colors.black,
         },
         body: {
           fontFamily: FontFamily.interRegular,
-          fontSize: scaledFont(14),
-          lineHeight: scaledFont(21),
+          fontSize: scaledWidth(14),
+          lineHeight: scaledWidth(21),
           color: colors.darkGrey,
         },
         meta: {
           fontFamily: FontFamily.interMedium,
-          fontSize: scaledFont(12),
+          fontSize: scaledWidth(12),
           color: colors.grey,
         },
         bullet: {
           fontFamily: FontFamily.interRegular,
-          fontSize: scaledFont(14),
-          lineHeight: scaledFont(20),
+          fontSize: scaledWidth(14),
+          lineHeight: scaledWidth(20),
           color: colors.darkGrey,
         },
         chip: {
           fontFamily: FontFamily.interMedium,
-          fontSize: scaledFont(11),
+          fontSize: scaledWidth(11),
         },
       }),
-    [colors.black, colors.darkGrey, colors.grey, colors.grey1, scaledFont],
+    [colors.black, colors.darkGrey, colors.grey, colors.grey1, scaledWidth],
   );
 
   return (
@@ -123,7 +122,7 @@ export default function HomeTab() {
               style={{
                 color: colors.white,
                 fontFamily: FontFamily.interBold,
-                fontSize: scaledFont(18),
+                fontSize: scaledWidth(18),
               }}>
               MR
             </Text>
@@ -144,8 +143,8 @@ export default function HomeTab() {
               style={{
                 color: colors.white,
                 fontFamily: FontFamily.interSemiBold,
-                fontSize: scaledFont(12),
-                lineHeight: scaledFont(16),
+                fontSize: scaledWidth(12),
+                lineHeight: scaledWidth(16),
                 textAlign: 'center',
                 ...platformSelect({
                   android: {includeFontPadding: false},
@@ -156,13 +155,13 @@ export default function HomeTab() {
             </Text>
           </Pressable>
         </View>
-        <Text style={{color: colors.white, fontFamily: FontFamily.interBold, fontSize: scaledFont(22)}}>
+        <Text style={{color: colors.white, fontFamily: FontFamily.interBold, fontSize: scaledWidth(22)}}>
           {profile.name}
         </Text>
-        <Text style={{color: colors.brand5, fontFamily: FontFamily.interMedium, fontSize: scaledFont(15)}}>
+        <Text style={{color: colors.brand5, fontFamily: FontFamily.interMedium, fontSize: scaledWidth(15)}}>
           {profile.title}
         </Text>
-        <Text style={{color: colors.white, opacity: 0.95, fontFamily: FontFamily.interRegular, fontSize: scaledFont(13), lineHeight: scaledFont(19)}}>
+        <Text style={{color: colors.white, opacity: 0.95, fontFamily: FontFamily.interRegular, fontSize: scaledWidth(13), lineHeight: scaledWidth(19)}}>
           {profile.location} · {profile.phone}
         </Text>
         {!tabletOnly ? (
@@ -176,7 +175,7 @@ export default function HomeTab() {
             borderRadius: scaledWidth(12),
             backgroundColor: colors.white,
           }}>
-          <Text style={{color: colors.brand, fontFamily: FontFamily.interBold, fontSize: scaledFont(13)}}>
+          <Text style={{color: colors.brand, fontFamily: FontFamily.interBold, fontSize: scaledWidth(13)}}>
             Full résumé view
           </Text>
         </Pressable>
@@ -196,7 +195,7 @@ export default function HomeTab() {
                 borderRadius: scaledWidth(12),
                 backgroundColor: colors.white,
               }}>
-              <Text style={{color: colors.brand, fontFamily: FontFamily.interBold, fontSize: scaledFont(13)}}>
+              <Text style={{color: colors.brand, fontFamily: FontFamily.interBold, fontSize: scaledWidth(13)}}>
                 Full résumé view
               </Text>
             </Pressable>
@@ -272,7 +271,7 @@ export default function HomeTab() {
         </Text>
         {experience.map(exp => (
           <View key={exp.id} style={{marginTop: tabletOnly ? verticalSpacing(10) : scaledHeight(12), gap: tabletOnly ? verticalSpacing(4) : scaledHeight(6)}}>
-            <Text style={[styles.h1, {fontSize: scaledFont(17)}, theme === 'dark' && {color: colors.white}]}>
+            <Text style={[styles.h1, {fontSize: scaledWidth(17)}, theme === 'dark' && {color: colors.white}]}>
               {exp.role}
             </Text>
             <Text style={styles.meta}>
@@ -327,7 +326,7 @@ export default function HomeTab() {
         </Text>
         {education.map(ed => (
           <View key={ed.id} style={{marginTop: tabletOnly ? verticalSpacing(8) : scaledHeight(10), gap: tabletOnly ? verticalSpacing(3) : scaledHeight(4)}}>
-            <Text style={[styles.h1, {fontSize: scaledFont(16)}, theme === 'dark' && {color: colors.white}]}>
+            <Text style={[styles.h1, {fontSize: scaledWidth(16)}, theme === 'dark' && {color: colors.white}]}>
               {ed.degree}
             </Text>
             <Text style={styles.meta}>

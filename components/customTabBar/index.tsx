@@ -1,6 +1,6 @@
 import {FontFamily} from '@/constants/Fonts';
 import {useTheme} from '@/services';
-import {platformSelect, useScreenLayout} from 'expo-responsive-window';
+import {platformSelect, useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {Ionicons} from '@expo/vector-icons';
 import {memo, useMemo} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
@@ -38,7 +38,6 @@ function CustomTabBar({state, descriptors, navigation}: TabBarProps) {
   const insets = useSafeAreaInsets();
   const {
     contentMaxWidth,
-    scaledFont,
     scaledHeight,
     scaledWidth,
     tabletOnly,
@@ -93,13 +92,12 @@ function CustomTabBar({state, descriptors, navigation}: TabBarProps) {
           paddingHorizontal: scaledWidth(4),
         },
         label: {
-          fontSize: scaledFont(wideLayout ? 12 : 11),
+          fontSize: scaledWidth(wideLayout ? 12 : 11),
           fontFamily: FontFamily.interSemiBold,
         },
       }),
     [
       colors.darkTransparent,
-      scaledFont,
       scaledHeight,
       wideLayout,
       scaledWidth,

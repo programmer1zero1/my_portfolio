@@ -1,3 +1,17 @@
+/**
+ * @programmer1zero1/expo-responsive-window
+ *
+ * Two parallel APIs share the same maths. Pick the right one:
+ *
+ *  - REACTIVE (re-renders on rotation / resize):
+ *      `useScreenLayout`, `useResponsivePick`, `<ScreenContentInsets/>`
+ *
+ *  - SNAPSHOT (one-shot read, safe in worklets / event handlers / module scope):
+ *      `getScreenLayoutSnapshot`, `scaledWidthDetached`,
+ *      standalone `windowWidthPct`/`windowHeightPct`, `pickByBreakpoint`
+ *
+ * See README "Reactive vs snapshot" for the full guide.
+ */
 import {
   createContext,
   memo,
@@ -167,17 +181,13 @@ export type ScreenLayoutMetrics = {
   windowHeightPct: (percentage: number) => number;
 
   /**
-   * Horizontal sizes (radii, horizontal padding/gaps): scales from **`designWidth`**, clamped (`scalePlateauWidth`, `scaleMax`).
+   * Horizontal sizes and width-ramped typography: radii, horizontal padding/gaps,
+   * **`fontSize`**, icon sizes — scales from **`designWidth`**, clamped (`scalePlateauWidth`, `scaleMax`).
    */
   scaledWidth: (designPx: number, opts?: UnaryScaleOptions) => number;
 
   /** Vertical sizes from **`designHeight`**, **without** tablet/desktop compaction. */
   scaledHeight: (designPx: number, opts?: UnaryScaleOptions) => number;
-
-  /**
-   * Typography (and optionally icon sizes): same width-based ramp as **`scaledWidth`**.
-   */
-  scaledFont: (designPx: number, opts?: UnaryScaleOptions) => number;
 
   /**
    * `scaledWidth` using **design px per breakpoint** (desktop falls back tablet → phone).
@@ -332,11 +342,11 @@ export function getScreenLayoutSnapshot(
 }
 
 /**
- * Prefer `useScreenLayout().scaledFont` for live resize.
+ * One-shot width-based scale (same ramp as `useScreenLayout().scaledWidth`), no resize subscription.
  * Second arg may be **`windowWidth` (number)** (legacy) or **`{ windowWidth?, mergeSettings? }`**.
  */
-export function scaledFontDetached(
-  designFontPx: number,
+export function scaledWidthDetached(
+  designPx: number,
   windowWidthOrOptions?:
     | number
     | {windowWidth?: number; mergeSettings?: Partial<ScreenLayoutSettings>},
@@ -349,7 +359,7 @@ export function scaledFontDetached(
     options?.windowWidth ?? Dimensions.get('window').width;
   const settings = mergeSettings(options?.mergeSettings);
   const scale = widthBaseScaleForWindow(w, settings);
-  return Math.round(PixelRatio.roundToNearestPixel(designFontPx * scale));
+  return Math.round(PixelRatio.roundToNearestPixel(designPx * scale));
 }
 
 function buildScreenLayoutMetrics(
@@ -441,7 +451,6 @@ function buildScreenLayoutMetrics(
     windowHeightPct: percentage => windowHeightPct(percentage, windowHeight),
     scaledWidth,
     scaledHeight,
-    scaledFont: scaledWidth,
     scaledWidthAt,
     scaledHeightAt,
     verticalSpacingAt,

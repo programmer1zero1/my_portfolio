@@ -1,6 +1,6 @@
 import {FontFamily} from '@/constants/Fonts';
 import {useTheme} from '@/services';
-import {useScreenLayout} from 'expo-responsive-window';
+import {useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {router} from 'expo-router';
 import {memo} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
@@ -17,7 +17,7 @@ const Header = memo(function Header({
   backLabel = '← Back',
 }: HeaderProps) {
   const {colors, theme} = useTheme();
-  const {scaledFont, scaledWidth} = useScreenLayout();
+  const {scaledWidth} = useScreenLayout();
 
   const handleBack = () => {
     if (onBackPress) onBackPress();
@@ -31,7 +31,7 @@ const Header = memo(function Header({
           style={{
             color: colors.brand,
             fontFamily: FontFamily.interBold,
-            fontSize: scaledFont(14),
+            fontSize: scaledWidth(14),
           }}>
           {backLabel}
         </Text>
@@ -44,7 +44,7 @@ const Header = memo(function Header({
             marginLeft: scaledWidth(12),
             color: theme === 'dark' ? colors.white : colors.black,
             fontFamily: FontFamily.displayBold,
-            fontSize: scaledFont(18),
+            fontSize: scaledWidth(18),
           }}>
           {title}
         </Text>

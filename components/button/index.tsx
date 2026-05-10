@@ -1,6 +1,6 @@
 import {FontFamily} from '@/constants/Fonts';
 import {useTheme} from '@/services';
-import {useScreenLayout} from 'expo-responsive-window';
+import {useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {memo} from 'react';
 import {
   ActivityIndicator,
@@ -31,7 +31,7 @@ const Button = memo(function Button({
   style,
 }: ButtonProps) {
   const {colors} = useTheme();
-  const {scaledFont, scaledWidth, scaledHeight} = useScreenLayout();
+  const {scaledWidth, scaledHeight} = useScreenLayout();
 
   const palette =
     variant === 'brand'
@@ -77,7 +77,7 @@ const Button = memo(function Button({
           style={{
             color: palette.fg,
             fontFamily: FontFamily.interBold,
-            fontSize: scaledFont(16),
+            fontSize: scaledWidth(16),
           }}>
           {label}
         </Text>

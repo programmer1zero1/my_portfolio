@@ -2,7 +2,7 @@ import {MainWrapper, ParentWrapper} from '@/components';
 import {FontFamily} from '@/constants/Fonts';
 import {projects} from '@/constants/cvData';
 import {useTheme} from '@/services';
-import {ScreenContentInsets, useScreenLayout} from 'expo-responsive-window';
+import {ScreenContentInsets, useScreenLayout} from '@programmer1zero1/expo-responsive-window';
 import {router} from 'expo-router';
 import {useMemo} from 'react';
 import {
@@ -17,7 +17,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export default function ProjectsTab() {
   const {colors, theme} = useTheme();
-  const {scaledFont, scaledHeight, verticalSpacing, scaledWidth, tabletOnly} =
+  const {scaledHeight, verticalSpacing, scaledWidth, tabletOnly} =
     useScreenLayout();
   const insets = useSafeAreaInsets();
 
@@ -30,31 +30,31 @@ export default function ProjectsTab() {
       StyleSheet.create({
         h1: {
           fontFamily: FontFamily.displayBold,
-          fontSize: scaledFont(26),
+          fontSize: scaledWidth(26),
           color: theme === 'dark' ? colors.white : colors.black,
         },
         title: {
           fontFamily: FontFamily.interBold,
-          fontSize: scaledFont(17),
+          fontSize: scaledWidth(17),
           color: theme === 'dark' ? colors.white : colors.black,
         },
         body: {
           fontFamily: FontFamily.interRegular,
-          fontSize: scaledFont(14),
-          lineHeight: scaledFont(20),
+          fontSize: scaledWidth(14),
+          lineHeight: scaledWidth(20),
           color: theme === 'dark' ? colors.grey5 : colors.darkGrey,
         },
         meta: {
           fontFamily: FontFamily.interMedium,
-          fontSize: scaledFont(11),
+          fontSize: scaledWidth(11),
           color: colors.grey,
         },
         badge: {
           fontFamily: FontFamily.interSemiBold,
-          fontSize: scaledFont(10),
+          fontSize: scaledWidth(10),
         },
       }),
-    [colors.black, colors.darkGrey, colors.grey, colors.grey5, colors.white, scaledFont, theme],
+    [colors.black, colors.darkGrey, colors.grey, colors.grey5, colors.white, scaledWidth, theme],
   );
 
   return (
@@ -128,14 +128,14 @@ export default function ProjectsTab() {
             <View style={{flexDirection: 'row', gap: scaledWidth(10), flexWrap: 'wrap'}}>
               {item.appStoreUrl ? (
                 <Pressable onPress={() => Linking.openURL(item.appStoreUrl!)}>
-                  <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledFont(12), color: colors.blue}}>
+                  <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledWidth(12), color: colors.blue}}>
                     App Store
                   </Text>
                 </Pressable>
               ) : null}
               {item.playStoreUrl ? (
                 <Pressable onPress={() => Linking.openURL(item.playStoreUrl!)}>
-                  <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledFont(12), color: colors.blue}}>
+                  <Text style={{fontFamily: FontFamily.interSemiBold, fontSize: scaledWidth(12), color: colors.blue}}>
                     Play Store
                   </Text>
                 </Pressable>
