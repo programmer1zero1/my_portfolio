@@ -1,0 +1,49 @@
+{
+  "name": "expo-responsive-window",
+  "version": "1.4.0",
+  "description": "Window-aware breakpoints, scaled pixels (font/width/height), vertical compact rhythm, and a guttered container for Expo / React Native apps.",
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "responsive",
+    "dimensions",
+    "breakpoints",
+    "tablet",
+    "layout"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --clean --dts --format cjs,esm --external react --external react-native --sourcemap",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.71.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.0",
+    "tsup": "^8.4.0",
+    "typescript": "~5.9.2"
+  }
+}
